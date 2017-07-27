@@ -1,2 +1,2 @@
-# js-leetcode-practices
-A personal practice of using JavaScript to solve LeetCode problems.
+# LeetCode Practices In JavaScript
+个人leetcode问题JavaScript解答集。
