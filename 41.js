@@ -11,25 +11,28 @@
  * @return {number}
  */
 var firstMissingPositive = function(nums) {
-    let arr = new Array();
-    let outcome;
-    
+    let obj = {};
+    let outcome = 1;
+
     nums.forEach(num => {
         if(num > 0){
-            arr[num] = num;
+            obj[num] = num;
         }
     });
 
-    console.log(arr)
-    
-    for(let i=1; i<arr.length; i++){
-        if(arr[i] === undefined){
-            outcome = i + 1;
-            break;
+    let sortedArr = Object.keys(obj);
+    if (sortedArr.length === 0) {
+        return 1;
+    }else{
+        for (let index=0; index<sortedArr.length; index++) {
+            let num = parseInt(sortedArr[index]);
+            if(num !== index + 1){
+                return index + 1;
+            }
         }
+        return sortedArr.length + 1;
     }
     
-    return outcome ? outcome : 1;
 };
 
 var arr = [2, 1];
